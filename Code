@@ -1,0 +1,36 @@
+# collecting user inputs
+sex = input("Enter sex: ").strip().lower()
+height = float(input("Enter height in inches: "))
+weight = float(input("Enter weight in lbs: "))
+
+# define sex variations
+male_variations = ['male', 'm', 'man', '1']
+female_variations = ['female', 'f', '0']
+
+# check eligibility based on sex, weight, and height
+if sex in male_variations:
+    if not (height <= 80):
+        print("Participant is too tall")
+    if not (62 <= height):
+        print("Participant is too short")
+    if not (150 <= weight):
+        print("Participant is too light")
+    if not (weight <= 280):
+        print("Participant is too heavy")
+    else:
+        print("Participant qualifies for the study")
+
+elif sex in female_variations:
+    if not (59 <= height):
+        print("Participant is too short")
+    if not (height <= 71):
+        print("Participant is too tall")
+    if not (100 <= weight):
+        print("Participant is too light")
+    if not (weight <= 180):
+        print("Participant is too heavy")
+    else:
+        print("Participant qualifies for the study")
+
+else:
+    print("Sex input is not recognized. Please enter Male or Female.")
